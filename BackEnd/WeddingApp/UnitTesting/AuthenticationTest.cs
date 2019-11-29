@@ -12,5 +12,12 @@ namespace UnitTesting
 
             Assert.Equal(true, isTrue);
         }
+
+        [Fact]
+        public void BaseLineTest_ThrowsArgumentException()
+        {
+
+           // Assert.Throws<ArgumentException>(actual);
+        }
     }
 }
