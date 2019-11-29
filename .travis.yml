@@ -2,6 +2,8 @@ language: csharp
 mono: none
 dotnet: 2.2
 script:
+ - cd BackEnd
+ - cd WeddingApp
  - dotnet restore
  - dotnet build
  - dotnet test
