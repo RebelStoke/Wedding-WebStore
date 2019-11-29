@@ -5,7 +5,21 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeddingApp", "WeddingApp\WeddingApp.csproj", "{1779B37D-80D4-4303-9F35-EA1797D70BF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{AEA5F9AE-38F9-4562-803A-72AC8216C235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{EAD13A8A-1049-4E40-A6A5-9134C57990BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AAD392B1-0E92-4084-83B6-501199D5B6D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{21060795-F680-42E9-8927-5B937FFF1A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingApp.Core", "WeddingApp.Core\WeddingApp.Core.csproj", "{FE6EBE61-01F0-4537-86B5-E80B64420F66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingApp.Entity", "WeddingApp.Entity\WeddingApp.Entity.csproj", "{26DF6186-1813-4C3C-913C-ADAC3DD662D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingApp.Infrastructure.SQLData", "WeddingApp.Infrastructure.SQLData\WeddingApp.Infrastructure.SQLData.csproj", "{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +35,28 @@ Global
 		{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6EBE61-01F0-4537-86B5-E80B64420F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6EBE61-01F0-4537-86B5-E80B64420F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6EBE61-01F0-4537-86B5-E80B64420F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6EBE61-01F0-4537-86B5-E80B64420F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26DF6186-1813-4C3C-913C-ADAC3DD662D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DF6186-1813-4C3C-913C-ADAC3DD662D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DF6186-1813-4C3C-913C-ADAC3DD662D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DF6186-1813-4C3C-913C-ADAC3DD662D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1779B37D-80D4-4303-9F35-EA1797D70BF3} = {AEA5F9AE-38F9-4562-803A-72AC8216C235}
+		{7E7AE47B-E43A-48E3-ADCC-9FC92B1F7C27} = {EAD13A8A-1049-4E40-A6A5-9134C57990BD}
+		{FE6EBE61-01F0-4537-86B5-E80B64420F66} = {AAD392B1-0E92-4084-83B6-501199D5B6D1}
+		{26DF6186-1813-4C3C-913C-ADAC3DD662D0} = {AAD392B1-0E92-4084-83B6-501199D5B6D1}
+		{7E76F2C9-C938-4D78-B3E4-EDFE1CABC3A0} = {21060795-F680-42E9-8927-5B937FFF1A22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {979F6F2C-9DCA-4E8F-A527-B1518BA6E844}
