@@ -1,0 +1,13 @@
+-Order > Read all orders
+	> Read speicifc order
+	> Create / Edit / Delete order
+
+- Customer > Name , Email, Phone, ID, Location ?
+
+- User > Username , Password , Verification
+
+
+
+// Methods
+- Get all marked dates.
+- Authentication + tokenisation
