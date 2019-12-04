@@ -23,20 +23,6 @@ namespace WeddingApp.Controllers
             _authService = authService;
         }
 
-        // GET: api/Login
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Login/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         [HttpPost]
         // POST: api/Login
         public IActionResult Post([FromBody] JObject data)
@@ -85,12 +71,6 @@ namespace WeddingApp.Controllers
             {
                 return BadRequest(e.Message);
             }
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
