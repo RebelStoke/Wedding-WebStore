@@ -50,7 +50,7 @@ namespace WeddingApp
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretBytes),
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromSeconds(5)
+                    ClockSkew = TimeSpan.FromMinutes(5)
                 };
             });
 
