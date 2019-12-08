@@ -21,16 +21,14 @@ namespace WeddingApp.Controllers
 
         //[Authorize(Roles = "Administrator")] // Get a list of all orders for admin // might require paging
         [HttpGet]
-        public ActionResult<IEnumerable<Order>> Get([FromBody] JObject data)
+        public ActionResult<IEnumerable<Order>> Get()
         {
             try
             {
-                if (data["getAllMethod"].ToString() == "Normal") {
                     return Ok(_orderService.GetAllOrders(new Filter() { CurrentPage = 0, ItemsPerPage = 0 }));
-            }else
-            {
-                    return Ok( _orderService.GetAllDates(1));
-            }
+            
+                    //return Ok( _orderService.GetAllDates(1));
+            
 
             }
             catch (Exception e)
