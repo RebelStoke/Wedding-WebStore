@@ -49,7 +49,7 @@ namespace WeddingApp.Core.ApplicationService.HelperService
                     null, // audience - not needed (ValidateAudience = false)
                     claims.ToArray(),
                     DateTime.Now, // notBefore
-                    DateTime.Now.AddSeconds(10))); // expires in 10 S!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! For real world. Change to hours / minutes
+                    DateTime.Now.AddMinutes(10))); 
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
