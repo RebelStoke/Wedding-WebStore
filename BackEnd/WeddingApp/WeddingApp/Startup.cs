@@ -69,6 +69,9 @@ namespace WeddingApp
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
 
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
             services.AddTransient<IDatabaseInitialise, DatabaseInitialise>();
             services.AddSingleton<IAuthenticationService>(new Authentication(secretBytes));
 

@@ -43,6 +43,20 @@ namespace WeddingApp.Infrastructure.SQLData
             };
             ctx.Users.Add(user1);
             ctx.Users.Add(user2);
+
+
+
+            Customer cust1 = ctx.Customers.Add(new Customer() { name = "Son", phone = "6459124429", email = "dragonballz@gmail.com" }).Entity;
+            Customer cust2 = ctx.Customers.Add(new Customer() { name = "Boom", phone = "696969", email = "Dezz@gmail.com" }).Entity;
+
+            Order ord1 = ctx.Orders.Add(new Order() { dateForOrderToBeCompleted = DateTime.Parse("01/04/2015"), dateWhenOrderWasMade = DateTime.Parse("05/08/2014"), customer = cust1 }).Entity;
+            Order ord2 = ctx.Orders.Add(new Order() {dateForOrderToBeCompleted = DateTime.Parse("01/04/2014"), dateWhenOrderWasMade = DateTime.Parse("05/08/2012"),  customer = cust2 }).Entity;
+            Order ord3 = ctx.Orders.Add(new Order() { dateForOrderToBeCompleted = DateTime.Parse("01/04/2013"), dateWhenOrderWasMade = DateTime.Parse("05/08/2011"), customer = cust2 }).Entity;
+
+            cust1.allOrders.Add(ord1);
+            cust2.allOrders.Add(ord2);
+            cust2.allOrders.Add(ord3);
+
             ctx.SaveChanges();
         }
     }
