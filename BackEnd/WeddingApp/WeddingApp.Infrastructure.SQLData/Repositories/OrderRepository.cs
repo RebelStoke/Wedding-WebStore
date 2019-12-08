@@ -53,7 +53,7 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
             }
             else
             {
-                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.customer);
+                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.customer).Include(p => p.dateForOrderToBeCompleted);
             }
             return filteredOwners;
         }

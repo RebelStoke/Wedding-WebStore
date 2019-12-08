@@ -49,9 +49,15 @@ namespace WeddingApp.Infrastructure.SQLData
             Customer cust1 = ctx.Customers.Add(new Customer() { name = "Son", phone = "6459124429", email = "dragonballz@gmail.com" }).Entity;
             Customer cust2 = ctx.Customers.Add(new Customer() { name = "Boom", phone = "696969", email = "Dezz@gmail.com" }).Entity;
 
-            Order ord1 = ctx.Orders.Add(new Order() { dateForOrderToBeCompleted = DateTime.Parse("01/04/2015"), dateWhenOrderWasMade = DateTime.Parse("05/08/2014"), customer = cust1 }).Entity;
-            Order ord2 = ctx.Orders.Add(new Order() {dateForOrderToBeCompleted = DateTime.Parse("01/04/2014"), dateWhenOrderWasMade = DateTime.Parse("05/08/2012"),  customer = cust2 }).Entity;
-            Order ord3 = ctx.Orders.Add(new Order() { dateForOrderToBeCompleted = DateTime.Parse("01/04/2013"), dateWhenOrderWasMade = DateTime.Parse("05/08/2011"), customer = cust2 }).Entity;
+            Order ord1 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2014"), customer = cust1 }).Entity;
+            Order ord2 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2012"),  customer = cust2 }).Entity;
+            Order ord3 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2011"), customer = cust2 }).Entity;
+
+            DatesAssigned datA1 = ctx.Dates.Add(new DatesAssigned() { order = ord1,takenDate = DateTime.Parse("01/04/2015"),reason = "Lol" }).Entity;
+
+            DatesAssigned datA2 = ctx.Dates.Add(new DatesAssigned() { order = ord2, takenDate = DateTime.Parse("01/04/2014"), reason = "UMom" }).Entity;
+
+            DatesAssigned datA3 = ctx.Dates.Add(new DatesAssigned() { order = ord3, takenDate = DateTime.Parse("01/04/2013"), reason = "DoinUr" }).Entity;
 
             cust1.allOrders.Add(ord1);
             cust2.allOrders.Add(ord2);

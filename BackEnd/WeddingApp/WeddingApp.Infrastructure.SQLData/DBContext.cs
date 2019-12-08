@@ -12,13 +12,23 @@ namespace WeddingApp.Infrastructure.SQLData
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<DatesAssigned> Dates { get; set; }
+
         public DBContext(DbContextOptions<DBContext> opt) : base(opt) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Order>().HasOne(c => c.customer).WithMany(o => o.allOrders).OnDelete(DeleteBehavior.SetNull);
-}
+            modelBuilder.Entity<Order>()
+                .HasOne(c => c.customer)
+                .WithMany(o => o.allOrders)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<DatesAssigned>()
+                .HasOne<Order>(ad => ad.order)
+                .WithOne(s => s.dateForOrderToBeCompleted)
+                .HasForeignKey<DatesAssigned>(ad => ad.ID);
+        }
     }
 }
