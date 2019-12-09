@@ -1,0 +1,90 @@
+#navbar {
+  transition: 0.4s ease-in;
+  height: 8vh;
+  background: rgba(255, 255, 255);
+}
+
+.navCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 7vh;
+  width: 7vh;
+  transition: 0.3s ease-in;
+}
+
+.logo:hover {
+  height: 8vh;
+  width: 8vh;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.buttonElement {
+  transition: font 0.3s ease-in;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: #000000;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Lucida Sans Unicode";
+  height: 8vh;
+}
+
+button {
+  transition: 0.3s ease-in;
+  background-color: #1B5240;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 23px;
+}
+
+button:hover {
+  font-size: 25px;
+  padding: 10px 32px;
+}
+
+.buttonElement:hover {
+  font-size: 25px;
+}
+
+.leftNav {
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: "Candara";
+}
+
+.fab {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  transition: font 0.3s ease-in;
+  font-size: 35px;
+  color: #000000;
+}
+
+.fab:hover {
+  font-size: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+

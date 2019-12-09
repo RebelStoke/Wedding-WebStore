@@ -1,0 +1,36 @@
+<div class="mainComponent">
+  <form>
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" >
+    </div>
+    <div class="form-group">
+      <label for="inputLocation">Location</label>
+      <input type="text" class="form-control" id="inputLocation">
+    </div>
+    <div class="form-group">
+      <label for="inputPhoneNumber">Phone number</label>
+      <input type="tel" class="form-control" id="inputPhoneNumber">
+    </div>
+    <div class="form-group">
+      <label for="inputLocation">Email</label>
+      <input type="email" class="form-control" id="inputEmail">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="calendarWrapper">
+  <p>Simple datepicker</p>
+  <div class="calendar">
+    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+  </div>
+  <div>
+  <hr/>
+  <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+  <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
+  <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+  <hr/>
+  </div>
+  <pre>Month: {{ date.month }}.{{ date.year }}</pre>
+  <pre>Model: {{ model | json }}</pre>
+</div>
+</div>
