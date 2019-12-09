@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div id="carouselWrapper">
+    <app-carousel #carousel [Images]="Images1" ></app-carousel>
+  </div>
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Gallery</h1>
+  <hr class="mt-2 mb-5">
+  <div class="rowWrapper">
+    <div class="d-flex flex-row">
+      <div *ngFor="let image of Images1; let i = index">
+        <img id="{{'image' + i }}" (click)="openCarousel(); carousel.setActive(i)" src="{{image}}"/>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" (click)="prevSet()" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" (click)="nextSet()" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

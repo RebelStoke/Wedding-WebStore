@@ -1,0 +1,25 @@
+.mainComponent{
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendarWrapper{
+  background: rgba(255, 224, 236, 0.4);
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+}
+.calendar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ngb-datepicker{
+  background: #c6b0b0;
+}
+.btn-light{
+  width: 4rem !important;
+  height: 4rem;
+}
