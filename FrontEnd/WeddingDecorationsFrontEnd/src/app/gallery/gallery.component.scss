@@ -3,7 +3,9 @@
   position: relative;
   justify-content: center;
   align-items: center;
+  //background: rgb(11,102,55);
 }
+
 
 img {
   margin: 10px;
@@ -58,6 +60,6 @@ img {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
 }

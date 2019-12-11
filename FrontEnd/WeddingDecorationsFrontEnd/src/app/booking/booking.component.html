@@ -1,5 +1,6 @@
 <div class="mainComponent">
-  <form>
+  <div class="formWrapper">
+  <form class="form">
     <div class="form-group">
       <label for="inputName">Name</label>
       <input type="text" class="form-control" id="inputName" >
@@ -16,12 +17,12 @@
       <label for="inputLocation">Email</label>
       <input type="email" class="form-control" id="inputEmail">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  </div>
   <div class="calendarWrapper">
   <p>Simple datepicker</p>
   <div class="calendar">
-    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+    <ngb-datepicker #dp [(ngModel)]="model" (select)="onDateSelect($event)"></ngb-datepicker>
   </div>
   <div>
   <hr/>
@@ -30,7 +31,7 @@
   <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
   <hr/>
   </div>
-  <pre>Month: {{ date.month }}.{{ date.year }}</pre>
-  <pre>Model: {{ model | json }}</pre>
+    <pre>Date: {{date1.day}}.{{date1.month}}.{{date1.year}}</pre>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </div>

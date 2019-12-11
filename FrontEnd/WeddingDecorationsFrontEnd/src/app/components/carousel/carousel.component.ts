@@ -6,16 +6,22 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  @Input() Images;
+  Images;
   activeId;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  setActive(id){
-    this.activeId = ''+id;
+  setActive(id) {
+    this.activeId = '' + id;
     console.log(id);
+  }
+  setImages(images) {
+    this.Images = images;
   }
 
 }
+

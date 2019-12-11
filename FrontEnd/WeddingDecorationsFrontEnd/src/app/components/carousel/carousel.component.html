@@ -1,8 +1,8 @@
-<ngb-carousel [activeId] = "activeId">
+<ngb-carousel (click)="$event.stopPropagation()" [activeId] = "activeId">
   <div *ngFor="let image of Images; let i = index">
     <ng-template ngbSlide id="{{i}}">
       <div class="picsum-img-wrapper">
-        <img src="{{image}}" alt="Random first slide" class="img-fluid">
+        <img data-src="{{image}}" class="img-fluid">
       </div>
     </ng-template>
   </div>

@@ -1,13 +1,13 @@
 <div class="container-fluid">
-  <div id="carouselWrapper">
-    <app-carousel #carousel [Images]="Images1" ></app-carousel>
+  <div id="carouselWrapper" (click)="closeCarousel()">
+    <app-carousel  #carousel></app-carousel>
   </div>
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Gallery</h1>
   <hr class="mt-2 mb-5">
   <div class="rowWrapper">
     <div class="d-flex flex-row">
       <div *ngFor="let image of Images1; let i = index">
-        <img id="{{'image' + i }}" (click)="openCarousel(); carousel.setActive(i)" src="{{image}}"/>
+        <img (click)="openCarousel(); carousel.setActive(i); carousel.setImages(Images1)" (error)="imageErrorHandler($event)" src="{{image}}"/>
       </div>
     </div>
   </div>
