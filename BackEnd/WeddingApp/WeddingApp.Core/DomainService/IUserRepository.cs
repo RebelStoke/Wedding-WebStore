@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using WeddingApp.Entity;
 
 namespace WeddingApp.Core.DomainService
@@ -9,6 +7,9 @@ namespace WeddingApp.Core.DomainService
     {
         IEnumerable<User> GetUsers();
 
+        User GetUserByUsername(string username);
         void UpdateUser(User user);
+
+        User CreateUser(User user);
     }
 }

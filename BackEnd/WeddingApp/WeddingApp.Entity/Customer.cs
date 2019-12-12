@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace WeddingApp.Entity
 {
     public class Customer
     {
-
         public int ID { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
 
-        public List<Order> allOrders { get; set; }
+        public List<Order> AllOrders { get; set; }
     }
 }

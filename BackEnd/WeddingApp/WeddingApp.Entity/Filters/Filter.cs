@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WeddingApp.Entity.Filters
+﻿namespace WeddingApp.Entity.Filters
 {
     public class Filter
     {

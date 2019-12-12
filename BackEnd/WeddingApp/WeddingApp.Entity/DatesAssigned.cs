@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WeddingApp.Entity
 {
     public class DatesAssigned
     {
         public int ID { get; set; }
-        public DateTime takenDate { get; set; }
-        public Order order { get; set; }
-        public String reason { get; set; }
+        public DateTime TakenDate { get; set; }
+        public Order Order { get; set; }
+        public String Reason { get; set; }
     }
 }

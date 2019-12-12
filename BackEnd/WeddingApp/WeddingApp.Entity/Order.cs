@@ -1,16 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WeddingApp.Entity
 {
+    public enum OrderApprovalType { Approved, Pending, Rejected };
+
     public class Order
     {
         public int ID { get; set; }
-        public DateTime dateWhenOrderWasMade { get; set; }
+        public DateTime DateWhenOrderWasMade { get; set; }
 
-        public DatesAssigned dateForOrderToBeCompleted { get; set; }
+        public DatesAssigned DateForOrderToBeCompleted { get; set; }
 
-        public Customer customer { get; set; }
+        public Customer Customer { get; set; }
+
+        public String Location { get; set; }
+
+        public OrderApprovalType Type { get; set; }
     }
 }

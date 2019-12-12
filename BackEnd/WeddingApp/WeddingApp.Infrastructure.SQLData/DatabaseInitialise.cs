@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using WeddingApp.Core.ApplicationService;
 using WeddingApp.Entity;
 
@@ -8,7 +6,7 @@ namespace WeddingApp.Infrastructure.SQLData
 {
     public class DatabaseInitialise : IDatabaseInitialise
     {
-        private IAuthenticationService _authentication;
+        private readonly IAuthenticationService _authentication;
 
         public DatabaseInitialise(IAuthenticationService authHelper)
         {
@@ -44,24 +42,30 @@ namespace WeddingApp.Infrastructure.SQLData
             ctx.Users.Add(user1);
             ctx.Users.Add(user2);
 
+            Customer cust1 = ctx.Customers.Add(new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" }).Entity;
+            Customer cust2 = ctx.Customers.Add(new Customer() { Name = "Boom", Phone = "696969", Email = "Dezz@gmail.com" }).Entity;
 
+            Order ord1 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("05/09/2019"), Customer = cust1, Location = "crusty", Type = OrderApprovalType.Approved }).Entity;
+            Order ord2 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("05/08/2019"), Customer = cust2, Location = "crustys", Type = OrderApprovalType.Pending }).Entity;
+            Order ord3 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("04/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
+            Order ord4 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("12/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
+            Order ord5 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("12/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
 
-            Customer cust1 = ctx.Customers.Add(new Customer() { name = "Son", phone = "6459124429", email = "dragonballz@gmail.com" }).Entity;
-            Customer cust2 = ctx.Customers.Add(new Customer() { name = "Boom", phone = "696969", email = "Dezz@gmail.com" }).Entity;
+             ctx.Dates.Add(new DatesAssigned() { Order = ord1, TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" });
 
-            Order ord1 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2014"), customer = cust1 }).Entity;
-            Order ord2 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2012"),  customer = cust2 }).Entity;
-            Order ord3 = ctx.Orders.Add(new Order() { dateWhenOrderWasMade = DateTime.Parse("05/08/2011"), customer = cust2 }).Entity;
+            ctx.Dates.Add(new DatesAssigned() { Order = ord2, TakenDate = DateTime.Parse("08/08/2019"), Reason = "UMom" });
 
-            DatesAssigned datA1 = ctx.Dates.Add(new DatesAssigned() { order = ord1,takenDate = DateTime.Parse("01/04/2015"),reason = "Lol" }).Entity;
+            ctx.Dates.Add(new DatesAssigned() { Order = ord3, TakenDate = DateTime.Parse("08/07/2019"), Reason = "DoinUr" });
 
-            DatesAssigned datA2 = ctx.Dates.Add(new DatesAssigned() { order = ord2, takenDate = DateTime.Parse("01/04/2014"), reason = "UMom" }).Entity;
+            ctx.Dates.Add(new DatesAssigned() { Order = ord4, TakenDate = DateTime.Parse("12/09/2019"), Reason = "DoinLol" });
 
-            DatesAssigned datA3 = ctx.Dates.Add(new DatesAssigned() { order = ord3, takenDate = DateTime.Parse("01/04/2013"), reason = "DoinUr" }).Entity;
+            ctx.Dates.Add(new DatesAssigned() { Order = ord5, TakenDate = DateTime.Parse("01/07/2020"), Reason = "DoinKol" });
 
-            cust1.allOrders.Add(ord1);
-            cust2.allOrders.Add(ord2);
-            cust2.allOrders.Add(ord3);
+            cust1.AllOrders.Add(ord1);
+            cust2.AllOrders.Add(ord2);
+            cust2.AllOrders.Add(ord3);
+            cust1.AllOrders.Add(ord4);
+            cust1.AllOrders.Add(ord5);
 
             ctx.SaveChanges();
         }
