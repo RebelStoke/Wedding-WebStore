@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using WeddingApp.Core.ApplicationService;
 using WeddingApp.Core.ApplicationService.HelperService;
 using WeddingApp.Core.ApplicationService.ImplementedService;
@@ -72,10 +73,18 @@ namespace WeddingApp
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderRepository, OrderRepository>();
 
+            services.AddScoped<IDateService, DateService>();
+            services.AddScoped<IDateRepository, DateRepository>();
+
             services.AddTransient<IDatabaseInitialise, DatabaseInitialise>();
-            services.AddSingleton<IAuthenticationService>(new Authentication(secretBytes));
+            services.AddSingleton<IAuthenticationService>(new AuthenticationService(secretBytes));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.MaxDepth = 5;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

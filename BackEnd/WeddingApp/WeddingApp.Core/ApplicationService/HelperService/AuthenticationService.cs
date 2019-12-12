@@ -9,12 +9,11 @@ using System.Text;
 
 namespace WeddingApp.Core.ApplicationService.HelperService
 {
-   public class Authentication : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
-            
-        private byte[] secretBytes;
+        private readonly byte[] secretBytes;
 
-        public Authentication(byte[] secret)
+        public AuthenticationService(byte[] secret)
         {
             secretBytes = secret;
         }
@@ -49,7 +48,7 @@ namespace WeddingApp.Core.ApplicationService.HelperService
                     null, // audience - not needed (ValidateAudience = false)
                     claims.ToArray(),
                     DateTime.Now, // notBefore
-                    DateTime.Now.AddMinutes(10))); 
+                    DateTime.Now.AddMinutes(10)));
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
@@ -64,7 +63,7 @@ namespace WeddingApp.Core.ApplicationService.HelperService
             }
         }
 
-        public ClaimsPrincipal getExpiredPrincipal(string token)
+        public ClaimsPrincipal GetExpiredPrincipal(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters
             {
@@ -77,12 +76,10 @@ namespace WeddingApp.Core.ApplicationService.HelperService
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken); //Validates the token to fit parameters. Prevents temperaing with token.
-            var jwtSecurityToken = securityToken as JwtSecurityToken;
-            if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase)) //Check if token exists and if its ecnrypted in right way
+            if (!(securityToken is JwtSecurityToken jwtSecurityToken) || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase)) //Check if token exists and if its ecnrypted in right way
                 throw new SecurityTokenException("Invalid token");
 
             return principal;
         }
     }
 }
-

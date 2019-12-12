@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using WeddingApp.Core.ApplicationService;
@@ -21,15 +20,11 @@ namespace WeddingApp.Controllers
 
         //[Authorize(Roles = "Administrator")] // Get a list of all orders for admin // might require paging
         [HttpGet]
-        public ActionResult<IEnumerable<Order>> Get()
+        public ActionResult<IEnumerable<Order>> Get([FromQuery] Filter filter)
         {
             try
             {
-                    return Ok(_orderService.GetAllOrders(new Filter() { CurrentPage = 0, ItemsPerPage = 0 }));
-            
-                    //return Ok( _orderService.GetAllDates(1));
-            
-
+                return Ok(_orderService.GetAllOrders(filter));
             }
             catch (Exception e)
             {
@@ -41,7 +36,14 @@ namespace WeddingApp.Controllers
         [HttpGet("{id}")]
         public ActionResult<Order> Get(int id)
         {
-            return _orderService.ReadByID(id);
+            try
+            {
+                return Ok(_orderService.ReadByID(id));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
         }
 
         // Create order

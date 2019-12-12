@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
-using System.Text;
 
 namespace WeddingApp.Core.ApplicationService
 {
@@ -15,6 +13,6 @@ namespace WeddingApp.Core.ApplicationService
 
         string GenerateRefreshToken();
 
-        ClaimsPrincipal getExpiredPrincipal(string token);
+        ClaimsPrincipal GetExpiredPrincipal(string token);
     }
 }

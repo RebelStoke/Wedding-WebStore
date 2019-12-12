@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
+using System;
 using WeddingApp.Core.ApplicationService;
 
 namespace WeddingApp.Controllers
@@ -14,13 +10,11 @@ namespace WeddingApp.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly IAuthenticationService _authService;
         private readonly IUserService _userService;
 
-        public LoginController(IAuthenticationService authService, IUserService userService)
+        public LoginController (IUserService userService)
         {
             _userService = userService;
-            _authService = authService;
         }
 
         [HttpPost]
@@ -49,22 +43,12 @@ namespace WeddingApp.Controllers
         {
             try
             {
-                var principal = _authService.getExpiredPrincipal(data["token"].ToString()); //Check if token is formed correctly.
-                var username = principal.Identity.Name; //Get username from expired token
-                var savedRefreshToken = _userService.getRefreshToken(username); // Get current user refresh token. Preventing user from modifying the token in any way
-                if (savedRefreshToken != data["refreshToken"].ToString()) //If not matching. Front end should disconnect user
-                    throw new SecurityTokenException("Invalid refresh token");
-
-
-                var newJwtToken = _authService.GenerateToken(principal.Claims); //Generate new token with same info as expired token. (IsAdmin and Username is contained)
-                var newRefreshToken = _authService.GenerateRefreshToken(); // Generate new refresh token. Effectivly starting new seasion
-
-                _userService.SaveRefreshToken(username, newRefreshToken); //Save new generated re
+                var refreshedData = _userService.RefreshAndValidateToken(new Tuple<string, string>(data["token"].ToString(), data["refreshToken"].ToString()));
 
                 return Ok(new
                 {
-                    Token = newJwtToken,
-                    RefreshToken = newRefreshToken
+                    Token = refreshedData.Item1,
+                    RefreshToken = refreshedData.Item2
                 });
             }
             catch (Exception e)
