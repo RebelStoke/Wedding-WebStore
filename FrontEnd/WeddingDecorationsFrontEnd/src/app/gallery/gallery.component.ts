@@ -20,11 +20,9 @@ export class GalleryComponent implements OnInit {
 
   loadPictures(set): void {
     this.Images1 = [];
-    for (let i = 0; i < 9; i++) {
-      let img = new Image();
-      img.src = '../../assets/gallery/' + set + '/' + i + '.jpg';
-      if (img.width != 0)
-        this.Images1.push('../../assets/gallery/' + set + '/' + i + '.jpg');
+   for (let i = 0; i < 9; i++) {
+      const path = '../../assets/gallery/' + set + '/' + i + '.jpg';
+      this.Images1.push(path);
     }
   }
 
@@ -47,6 +45,24 @@ export class GalleryComponent implements OnInit {
     document.getElementById('carouselWrapper').style.display = 'flex';
     document.getElementById('carouselWrapper').style.position = 'fixed';
   }
+
+  closeCarousel() {
+    document.getElementById('carouselWrapper').style.display = 'none';
+  }
+
+  imageErrorHandler($event) {
+    let image = $event.target;
+    image.style.display = 'none';
+    this.removeImageFromArray(image.getAttribute("src"));
+  }
+
+  removeImageFromArray(src){
+    let index = this.Images1.indexOf(src);
+    console.log(src);
+    if(index > -1)
+      this.Images1.splice(index, 1);
+  }
 }
+
 
 

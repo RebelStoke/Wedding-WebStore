@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbCalendar, NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
+import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-booking',
@@ -10,6 +10,7 @@ export class BookingComponent implements OnInit {
 
   model: NgbDateStruct;
   date: {year: number, month: number};
+  date1: NgbDate = this.calendar.getToday();
 
   constructor(private calendar: NgbCalendar) {
   }
@@ -22,4 +23,7 @@ export class BookingComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDateSelect($event: NgbDate) {
+    this.date1 = $event;
+  }
 }
