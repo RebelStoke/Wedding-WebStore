@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WeddingApp.Core.DomainService;
@@ -25,10 +26,12 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
 
         public Order DeleteOrder(int ord)
         {
-            var countryToDelete = _context.Orders.FirstOrDefault(c => c.ID == ord);
-            _context.Orders.Remove(countryToDelete);
+
+            Order order = ReadById(ord);
+            _context.Attach(order).State = EntityState.Deleted;
             _context.SaveChanges();
-            return countryToDelete;
+
+            return order;
         }
 
         public Order EditOrder(Order orderToEdit)
@@ -38,18 +41,18 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
             return orderToEdit;
         }
 
-        public IEnumerable<Order> ReadAllOrders(Filter filter)
+        public Tuple<List<Order>, int> ReadAllOrders(Filter filter)
         {
-            IEnumerable<Order> filteredOwners;
+            List<Order> filteredOwners;
             if (filter.CurrentPage != 0 && filter.ItemsPerPage != 0)
             {
-                return _context.Orders.Include(o => o.Customer).Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).OrderByDescending(c => c.ID);
+                filteredOwners= _context.Orders.Include(o => o.Customer).Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).OrderByDescending(c => c.ID).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).ToList();
             }
             else
             {
-                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted);
+                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).ToList();
             }
-            return filteredOwners;
+            return new Tuple<List<Order>, int>(filteredOwners, _context.Orders.Count());
         }
 
         public Order ReadById(int orderID)

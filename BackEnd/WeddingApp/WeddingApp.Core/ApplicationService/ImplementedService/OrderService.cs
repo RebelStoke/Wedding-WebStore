@@ -34,13 +34,13 @@ namespace WeddingApp.Core.ApplicationService.ImplementedService
             return _orderRepo.EditOrder(orderToEdit);
         }
 
-        public List<Order> GetAllOrders(Filter filter = null)
+        public Tuple<List<Order>, int> GetAllOrders(Filter filter = null)
         {
             if (filter.CurrentPage < 0 || filter.ItemsPerPage < 0)
             {
                 throw new ArgumentException("Current page cannot be negetive. Items per page cannot be negetive");
             }
-            return _orderRepo.ReadAllOrders(filter).ToList();
+            return _orderRepo.ReadAllOrders(filter);
         }
 
         public Order ReadByID(int orderID)

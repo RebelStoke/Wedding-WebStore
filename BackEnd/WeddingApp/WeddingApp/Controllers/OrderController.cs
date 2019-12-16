@@ -24,7 +24,12 @@ namespace WeddingApp.Controllers
         {
             try
             {
-                return Ok(_orderService.GetAllOrders(filter));
+                var filteredOrders = _orderService.GetAllOrders(filter);
+                return Ok(new
+                {
+                    Orders = filteredOrders.Item1,
+                    TotalCount = filteredOrders.Item2
+                });
             }
             catch (Exception e)
             {
