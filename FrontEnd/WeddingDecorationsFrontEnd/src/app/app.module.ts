@@ -18,9 +18,9 @@ import { AdminComponent } from './admin-page/admin-login/admin.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BookingComponent } from './booking/booking.component';
 import { AdminMainComponent } from './admin-page/admin-main/admin-main-page.component';
-import { AdminViewComponent } from './admin-view/admin-view.component';
-import { AdminEditComponent } from './admin-edit/admin-edit.component';
-import { AdminCreateComponent } from './admin-create/admin-create.component';
+import { AdminViewComponent } from './admin-page/admin-components/admin-view/admin-view.component';
+import { AdminEditComponent } from './admin-page/admin-components/admin-edit/admin-edit.component';
+import { AdminCreateComponent } from './admin-page/admin-components/admin-create/admin-create.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { AdminCreateComponent } from './admin-create/admin-create.component';
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
   bootstrap: [AppComponent],
-  entryComponents: [CarouselComponent],
+  entryComponents: [CarouselComponent,AdminViewComponent,AdminEditComponent,AdminCreateComponent],
   exports: []
 })
 export class AppModule { }
