@@ -15,18 +15,6 @@ namespace UnitTesting
 {
     public class OrderTest
     {
-
-        /*        
-             Order CreateOrder(Order orderToCreate);
-
-        Order EditOrder(Order orderToEdit);
-
-        Order DeleteOrder(int orderID);
-
-        List<Order> GetAllOrders(Filter filter = null);
-
-        Order ReadByID(int orderID);
-          */
         [Fact]
         public void ReadyByID_ValidData()
         {

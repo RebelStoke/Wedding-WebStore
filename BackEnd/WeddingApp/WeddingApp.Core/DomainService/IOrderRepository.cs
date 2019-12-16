@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WeddingApp.Entity;
 using WeddingApp.Entity.Filters;
 
@@ -10,7 +11,7 @@ namespace WeddingApp.Core.DomainService
 
         Order DeleteOrder(int ord);
 
-        IEnumerable<Order> ReadAllOrders(Filter filter = null);
+        Tuple<List<Order>, int> ReadAllOrders(Filter filter = null);
 
         Order ReadById(int orderID);
 
