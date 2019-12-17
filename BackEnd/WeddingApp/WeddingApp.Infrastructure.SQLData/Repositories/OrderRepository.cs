@@ -41,23 +41,27 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
             return orderToEdit;
         }
 
+        public IEnumerable<Order> GetAllOrdersForMonth(int year, int month)
+        {
+            return _context.Orders.Where(x => x.DateForOrderToBeCompleted.year == year &&  x.DateForOrderToBeCompleted.month == month).Include(p => p.DateForOrderToBeCompleted).Include(p => p.DateWhenOrderWasMade);
+        }
         public Tuple<List<Order>, int> ReadAllOrders(Filter filter)
         {
             List<Order> filteredOwners;
             if (filter.CurrentPage != 0 && filter.ItemsPerPage != 0)
             {
-                filteredOwners= _context.Orders.Include(o => o.Customer).Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).OrderByDescending(c => c.ID).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).ToList();
+                filteredOwners= _context.Orders.Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).Include(p => p.DateWhenOrderWasMade).OrderByDescending(c => c.ID).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).ToList();
             }
             else
             {
-                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).ToList();
+                filteredOwners = _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).Include(p => p.DateWhenOrderWasMade).ToList();
             }
             return new Tuple<List<Order>, int>(filteredOwners, _context.Orders.Count());
         }
 
         public Order ReadById(int orderID)
         {
-            return _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).FirstOrDefault(o => o.ID == orderID);
+            return _context.Orders.AsNoTracking().Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).Include(p => p.DateWhenOrderWasMade).FirstOrDefault(o => o.ID == orderID);
         }
     }
 }

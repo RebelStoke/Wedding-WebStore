@@ -1,37 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {}
+    "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp/WeddingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
+    "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
+        "projectUniqueName": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj",
         "projectName": "WeddingApp.Core",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
-        "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\obj\\",
+        "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj",
+        "packagesPath": "/home/rebelstoke/.nuget/packages/",
+        "outputPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nedas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rebelstoke/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj"
               }
             }
           }
@@ -57,40 +52,29 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
+    "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
+        "projectUniqueName": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj",
         "projectName": "WeddingApp.Entity",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
-        "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\obj\\",
+        "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj",
+        "packagesPath": "/home/rebelstoke/.nuget/packages/",
+        "outputPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nedas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rebelstoke/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -115,50 +99,39 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
+    "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/WeddingApp.Infrastructure.SQLData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
+        "projectUniqueName": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/WeddingApp.Infrastructure.SQLData.csproj",
         "projectName": "WeddingApp.Infrastructure.SQLData",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
-        "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\obj\\",
+        "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/WeddingApp.Infrastructure.SQLData.csproj",
+        "packagesPath": "/home/rebelstoke/.nuget/packages/",
+        "outputPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nedas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rebelstoke/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj"
               }
             }
           }
@@ -184,53 +157,42 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {
+    "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp/WeddingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
+        "projectUniqueName": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp/WeddingApp.csproj",
         "projectName": "WeddingApp",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
-        "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\obj\\",
+        "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp/WeddingApp.csproj",
+        "packagesPath": "/home/rebelstoke/.nuget/packages/",
+        "outputPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nedas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rebelstoke/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Core/WeddingApp.Core.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Entity/WeddingApp.Entity.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj"
+              "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/WeddingApp.Infrastructure.SQLData.csproj": {
+                "projectPath": "/home/rebelstoke/WebstormProjects/Wedding-WebStore/BackEnd/WeddingApp/WeddingApp.Infrastructure.SQLData/WeddingApp.Infrastructure.SQLData.csproj"
               }
             }
           }
@@ -287,16 +249,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

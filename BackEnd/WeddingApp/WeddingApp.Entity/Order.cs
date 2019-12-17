@@ -7,9 +7,9 @@ namespace WeddingApp.Entity
     public class Order
     {
         public int ID { get; set; }
-        public DateTime DateWhenOrderWasMade { get; set; }
+        public DateObject DateWhenOrderWasMade { get; set; }
 
-        public DatesAssigned DateForOrderToBeCompleted { get; set; }
+        public DateObject DateForOrderToBeCompleted { get; set; }
 
         public Customer Customer { get; set; }
 

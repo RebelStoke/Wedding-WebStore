@@ -59,18 +59,31 @@ namespace WeddingApp.Core.ApplicationService.ImplementedService
             return ord;
         }
 
+        public List<Order> GetAllOrdersForMonth(int year, int month)
+        {
+            if (month <= 0 || month > 12)
+            {
+                throw new InvalidDataException("Month is invalid");
+            }
+            if(year>2050 || year < 1970)
+            {
+                throw new InvalidDataException("Year is invalid");
+            }
+            return _orderRepo.GetAllOrdersForMonth(year,month).ToList();
+        }
+
         private void CheckForValidData(Order ord)
         {
             if(ord.Customer == null || ord.DateForOrderToBeCompleted == null)
             {
                 throw new ArgumentException("Missing Customer or Date");
             }
-            if(ord.DateWhenOrderWasMade == null || ord.DateForOrderToBeCompleted.TakenDate == null)
+            if(ord.DateWhenOrderWasMade == null || ord.DateForOrderToBeCompleted == null)
             {
                 throw new ArgumentException("Missing Date");
             }
             ParseDates(ord.DateWhenOrderWasMade);
-            ParseDates(ord.DateForOrderToBeCompleted.TakenDate);
+            ParseDates(ord.DateForOrderToBeCompleted);
 
             if(ord.Location == "" || ord.Customer.Name == "" || ord.Customer.Phone == "" || ord.Customer.Email == ""|| ord.Location == null || ord.Customer.Name == null || ord.Customer.Phone == null || ord.Customer.Email == null)
             {
@@ -84,11 +97,11 @@ namespace WeddingApp.Core.ApplicationService.ImplementedService
 
         }
 
-        private void ParseDates(DateTime date)
+        private void ParseDates(DateObject date)
         {
             try
             {
-                DateTime dt = Convert.ToDateTime(date);
+                DateTime dt = new DateTime(date.year, date.month, date.day);
                 var myDate = DateTime.Now;
                 var compareDate1 = myDate.AddYears(-10);
                 var compareDate2 = myDate.AddYears(+10);

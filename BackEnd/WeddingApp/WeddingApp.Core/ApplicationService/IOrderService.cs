@@ -16,5 +16,6 @@ namespace WeddingApp.Core.ApplicationService
         Tuple<List<Order>, int> GetAllOrders(Filter filter = null);
 
         Order ReadByID(int orderID);
+        List<Order> GetAllOrdersForMonth(int year, int month);
     }
 }

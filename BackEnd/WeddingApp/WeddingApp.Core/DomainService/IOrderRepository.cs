@@ -16,5 +16,6 @@ namespace WeddingApp.Core.DomainService
         Order ReadById(int orderID);
 
         Order EditOrder(Order orderToEdit);
+        IEnumerable<Order> GetAllOrdersForMonth(int year, int month);
     }
 }

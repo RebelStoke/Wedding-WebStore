@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {BookingService} from './booking.service';
+import {Order} from './order';
+import {Customer} from './customer';
+
 
 @Component({
   selector: 'app-booking',
@@ -9,10 +13,10 @@ import {NgbCalendar, NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 export class BookingComponent implements OnInit {
 
   model: NgbDateStruct;
-  date: {year: number, month: number};
-  date1: NgbDate = this.calendar.getToday();
+  date1: NgbDate;
+  ordersInMonth: Order[];
 
-  constructor(private calendar: NgbCalendar) {
+  constructor(private calendar: NgbCalendar, private bookingService: BookingService) {
   }
 
   selectToday() {
@@ -21,9 +25,40 @@ export class BookingComponent implements OnInit {
 
 
   ngOnInit() {
+    this.date1 = this.calendar.getToday();
+    this.bookingService.getDatesOfMonth(this.date1).subscribe(orders => this.ordersInMonth = orders);
   }
 
-  onDateSelect($event: NgbDate) {
-    this.date1 = $event;
+  isDayReserved(date) {
+    for (const d of this.ordersInMonth) {
+      if (d.dateForOrderToBeCompleted.day === date.day && d.dateForOrderToBeCompleted.month === date.month && d.type === 'Pending') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  isDayUnavailable(date) {
+    for (const d of this.ordersInMonth) {
+      if (d.dateForOrderToBeCompleted.day === date.day && d.dateForOrderToBeCompleted.month === date.month && d.type === 'Rejected') {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  changeMonth(next: { year: number; month: number }) {
+    this.date1.month = next.month;
+    this.date1.year = next.year;
+    this.bookingService.getDatesOfMonth(this.date1).subscribe(orders => this.ordersInMonth = orders);
+  }
+
+  createOrder(name, email, place, phone) {
+    if (this.model != null) {
+    const c = new Customer(name, email, phone);
+    const o = new Order(c, this.calendar.getToday(), this.model, place);
+    this.bookingService.createOrder(o).subscribe();
+    }
+
   }
 }
