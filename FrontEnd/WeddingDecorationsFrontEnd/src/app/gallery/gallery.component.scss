@@ -1,9 +1,10 @@
 .container-fluid {
-  padding: 10vh 10vw 10vh 10vw;
+  padding: 10vh 10vw 15vh 10vw;
   position: relative;
   justify-content: center;
   align-items: center;
-  //background: rgb(11,102,55);
+  background: #faf7f2;
+
 }
 
 
@@ -62,4 +63,8 @@ img {
   display: inline-block;
   width: 25px;
   height: 25px;
+}
+h1{
+  font-family: 'Dosis', sans-serif;
+  color: #455d58;
 }

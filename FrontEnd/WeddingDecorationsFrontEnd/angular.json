@@ -25,6 +25,7 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/favicon-32x32.png",
               "src/assets"
             ],
             "styles": [

@@ -2,7 +2,6 @@
 {
   padding-top: 10vh;
   background-image:
-    linear-gradient(180deg, rgba(66,65,79,1) 0%, rgba(255,255,255,0) 44%),
     url(../../assets/mainBackground.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -22,7 +21,7 @@
 
 .bottomText{
   font-size: 35px;
-  color: white;
+  color: #191919;
   justify-content: end;
   margin-bottom: 5vh;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 2px 2px 2px rgba(206,89,55,0);

@@ -1,8 +1,9 @@
 #navbar {
   transition: 0.4s ease-in;
   height: 8vh;
-  background: rgba(255, 255, 255);
+  background: transparent;
 }
+
 
 .navCol {
   display: flex;
@@ -22,13 +23,6 @@
 }
 
 
-.list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 0;
-}
 
 .buttonElement {
   transition: font 0.3s ease-in;
@@ -37,55 +31,56 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  color: #000000;
-  font-size: 20px;
+  color: #455d58;
+  font-size: 25px;
   line-height: 20px;
-  font-family: "Lucida Sans Unicode";
+  font-family: 'Dosis', sans-serif;
   height: 8vh;
+}
+.buttonElement:hover{
+  font-size: 30px;
 }
 
 button {
   transition: 0.3s ease-in;
-  background-color: #1B5240;
+  background-color: #455d58;
   border: none;
   color: white;
-  padding: 5px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
   border-radius: 23px;
 }
 
 button:hover {
-  font-size: 25px;
-  padding: 10px 32px;
+  padding: 14px 25px;
+  font-size: 30px;
+
 }
 
-.buttonElement:hover {
-  font-size: 25px;
-}
 
 .leftNav {
-  margin-left: 20px;
-  font-size: 20px;
-  font-family: "Candara";
+  font-size: 21px;
+  font-family: 'Libre Baskerville', sans-serif;
 }
 
-.fab {
-  display: flex;
-  justify-content: center;
+.icon {
   width: 20%;
   transition: font 0.3s ease-in;
   font-size: 35px;
-  color: #000000;
 }
 
-.fab:hover {
-  font-size: 50px;
+.icon:hover {
+  font-size: 45px;
 }
 
 a {
   text-decoration: none;
+  color: #455d58;
+  margin: 0;
+  padding: 0;
+}
+a.black{
   color: black;
 }
 

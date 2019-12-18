@@ -25,6 +25,7 @@ export class BookingComponent implements OnInit {
 
 
   ngOnInit() {
+    this.selectToday();
     this.date1 = this.calendar.getToday();
     this.bookingService.getDatesOfMonth(this.date1).subscribe(orders => this.ordersInMonth = orders);
   }

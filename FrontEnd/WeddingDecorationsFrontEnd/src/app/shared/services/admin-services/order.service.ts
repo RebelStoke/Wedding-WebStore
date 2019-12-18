@@ -76,7 +76,7 @@ export class OrderService {
     this._search$.next();
   }
 
-  //Getters for main-page HTML.
+  // Getters for main-page HTML.
   get page() { return this._state.page; }
   get pageSize() { return this._state.pageSize; }
   get orders$() { return this._orders$.asObservable(); }
