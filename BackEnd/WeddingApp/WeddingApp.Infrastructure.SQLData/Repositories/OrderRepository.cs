@@ -50,11 +50,7 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
             List<Order> filteredOwners;
             if (filter.CurrentPage != 0 && filter.ItemsPerPage != 0)
             {
-<<<<<<< HEAD
-                filteredOwners= _context.Orders.Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).Include(p => p.DateWhenOrderWasMade).OrderByDescending(c => c.ID).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).ToList();
-=======
                 filteredOwners= _context.Orders.Include(o => o.Customer).Include(p => p.DateForOrderToBeCompleted).OrderByDescending(c => c.ID).Skip((filter.CurrentPage - 1) * filter.ItemsPerPage).Take(filter.ItemsPerPage).ToList();
->>>>>>> origin/Development
             }
             else
             {
