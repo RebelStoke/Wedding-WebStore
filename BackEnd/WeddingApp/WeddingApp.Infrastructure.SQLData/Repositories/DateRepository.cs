@@ -25,11 +25,11 @@ namespace WeddingApp.Infrastructure.SQLData.Repositories
         {
             if (month == 12)
             {
-                return _context.Dates.Where(x => x.TakenDate >= DateTime.Parse(month.ToString() + "/01/" + year.ToString()) && x.TakenDate < DateTime.Parse("01/01/" + (year + 1).ToString()));
+                return _context.Dates.Where(x => x.TakenDate >= DateTime.Parse(month.ToString() + "/01/" + year.ToString()) && x.TakenDate < DateTime.Parse("01/01/" + (year + 1).ToString())).Include(o => o.Order);
             }
             else
             {
-                return _context.Dates.Where(x => x.TakenDate >= DateTime.Parse(month.ToString() + "/01/" + year.ToString()) && x.TakenDate < DateTime.Parse((month + 1).ToString() + "/01/" + year.ToString()));
+                return _context.Dates.Where(x => x.TakenDate >= DateTime.Parse(month.ToString() + "/01/" + year.ToString()) && x.TakenDate < DateTime.Parse((month + 1).ToString() + "/01/" + year.ToString())).Include(o => o.Order);
             }
         }
     }
