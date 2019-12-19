@@ -81,13 +81,6 @@ export class AuthenticationService {
         token: response.token,
         refreshToken: response.refreshToken
       });
-    } else {
-      currentUser = JSON.stringify({
-        username: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
-        currentRole: decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'],
-        token: response.token,
-        refreshToken: response.refreshToken
-      });
     }
     this.logout(); // Delete existing user
 
