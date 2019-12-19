@@ -1,16 +1,17 @@
 .mainComponent{
   height: 100vh;
-  background: white;
+  background: #faf7f2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .calendarWrapper{
-  background: rgba(255, 224, 236, 0.4);
+  background: rgba(255, 224, 236, 0.41);
   padding: 5vh;
   display: flex;
   min-height: 75vh;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 .calendar{
   display: flex;
@@ -24,17 +25,65 @@ ngb-datepicker{
   width: 4rem !important;
   height: 4rem;
 }
-.form{
-  padding: 5vh;
-  background: rgba(0, 0, 0, 0.57);
-  min-height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .formWrapper{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.reservedDay{
+  background: orangered;
+}
+.unavailableDay{
+  background: red;
+}
+.focused{
+  background: #455d58;
+}
+.custom-day{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.custom-day:hover{
+  background: #455d58;
+}
+.form{
+  width: 70%;
+}
+input{
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  border-radius: 0px;
+}
+input:focus{
+  background: transparent;
+  border: 1px solid black;
+}
+label{
+  font-size: 25px;
+  font-family: 'Libre Baskerville', serif;
+}
+.description{
+  margin-bottom: 30px;
+  color: #455d58;
+  font-family: 'Junge', serif;
+}
+.btn{
+  border: 2px solid black;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+.btn:hover{
+  background: #455d58;
+  color: white;
+}
+::ng-deep div.ngb-dp-weekday{
+  color: #455d58;
+}
+::ng-deep div.ngb-dp-arrow > button {
+  color: #455d58;
 }

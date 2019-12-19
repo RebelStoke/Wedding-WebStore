@@ -24,10 +24,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -52,10 +52,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = 1,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -79,10 +79,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -121,10 +121,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -148,10 +148,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "ASd",  Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -173,10 +173,10 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = new DateTime(),
+                DateWhenOrderWasMade = new DateObject(),
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
@@ -186,7 +186,7 @@ namespace UnitTesting
             IOrderService orderService = new OrderService(orderRepository.Object);
 
 
-            Assert.Throws<ArgumentException>((Action)(() => orderService.CreateOrder(ord1)));
+            Assert.Throws<ArgumentOutOfRangeException>((Action)(() => orderService.CreateOrder(ord1)));
         }
 
         [Fact]
@@ -198,9 +198,9 @@ namespace UnitTesting
             Order ord1 = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
 
             };
@@ -224,20 +224,20 @@ namespace UnitTesting
             Order given = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crusty",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
 
             Order expected = new Order()
             {
                 ID = Id,
-                DateWhenOrderWasMade = DateTime.Parse("05/09/2019"),
+                DateWhenOrderWasMade = new DateObject(){day = 5, month = 9, year = 2019},
                 Customer = new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" },
                 Location = "crustys",
-                DateForOrderToBeCompleted = new DatesAssigned() { TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" },
+                DateForOrderToBeCompleted = new DateObject(){day = 9, month = 9, year = 2019},
                 Type = OrderApprovalType.Approved
             };
             orderRepository.Setup(repo => repo.ReadById(Id)).Returns(given);

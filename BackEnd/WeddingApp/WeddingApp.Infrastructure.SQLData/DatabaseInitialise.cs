@@ -45,27 +45,19 @@ namespace WeddingApp.Infrastructure.SQLData
             Customer cust1 = ctx.Customers.Add(new Customer() { Name = "Son", Phone = "6459124429", Email = "dragonballz@gmail.com" }).Entity;
             Customer cust2 = ctx.Customers.Add(new Customer() { Name = "Boom", Phone = "696969", Email = "Dezz@gmail.com" }).Entity;
 
-            Order ord1 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("05/09/2019"), Customer = cust1, Location = "crusty", Type = OrderApprovalType.Approved }).Entity;
-            Order ord2 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("05/08/2019"), Customer = cust2, Location = "crustys", Type = OrderApprovalType.Pending }).Entity;
-            Order ord3 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("04/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
-            Order ord4 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("12/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
-            Order ord5 = ctx.Orders.Add(new Order() { DateWhenOrderWasMade = DateTime.Parse("12/08/2019"), Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
-
-             ctx.Dates.Add(new DatesAssigned() { Order = ord1, TakenDate = DateTime.Parse("09/09/2019"), Reason = "Lol" });
-
-            ctx.Dates.Add(new DatesAssigned() { Order = ord2, TakenDate = DateTime.Parse("08/08/2019"), Reason = "UMom" });
-
-            ctx.Dates.Add(new DatesAssigned() { Order = ord3, TakenDate = DateTime.Parse("08/07/2019"), Reason = "DoinUr" });
-
-            ctx.Dates.Add(new DatesAssigned() { Order = ord4, TakenDate = DateTime.Parse("12/09/2019"), Reason = "DoinLol" });
-
-            ctx.Dates.Add(new DatesAssigned() { Order = ord5, TakenDate = DateTime.Parse("01/07/2020"), Reason = "DoinKol" });
-
+            Order ord1 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 8, day = 2},DateWhenOrderWasMade = new DateObject(){year = 2019, month = 11, day = 2}, Customer = cust1, Location = "crusty", Type = OrderApprovalType.Approved }).Entity;
+            Order ord7 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 9, day = 4}, DateWhenOrderWasMade = new DateObject(){year = 2019, month = 12, day = 2}, Customer = cust2, Location = "crustys", Type = OrderApprovalType.Pending }).Entity;
+            Order ord6 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 9, day = 5}, DateWhenOrderWasMade = new DateObject(){year = 2019, month = 12, day = 2}, Customer = cust2, Location = "crustys", Type = OrderApprovalType.Pending }).Entity;
+            Order ord3 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 10, day = 4},DateWhenOrderWasMade = new DateObject(){year = 2019, month = 11, day = 5}, Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
+            Order ord4 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 11, day = 5},DateWhenOrderWasMade = new DateObject(){year = 2019, month = 10, day = 6}, Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
+            Order ord5 = ctx.Orders.Add(new Order() { DateForOrderToBeCompleted = new DateObject(){year = 2019, month = 12, day = 6},DateWhenOrderWasMade = new DateObject(){year = 2019, month = 9, day = 2}, Customer = cust2, Location = "krab", Type = OrderApprovalType.Rejected }).Entity;
+            
             cust1.AllOrders.Add(ord1);
-            cust2.AllOrders.Add(ord2);
             cust2.AllOrders.Add(ord3);
             cust1.AllOrders.Add(ord4);
             cust1.AllOrders.Add(ord5);
+            cust1.AllOrders.Add(ord6);
+            cust1.AllOrders.Add(ord7);
 
             ctx.SaveChanges();
         }

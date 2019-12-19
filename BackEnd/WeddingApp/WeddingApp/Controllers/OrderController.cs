@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using WeddingApp.Core.ApplicationService;
 using WeddingApp.Entity;
 using WeddingApp.Entity.Filters;
@@ -36,7 +37,12 @@ namespace WeddingApp.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        // POST: api/Date
+        [HttpPost("monthly")]
+        public IActionResult Post([FromBody] JObject data)
+        {
+            return Ok(_orderService.GetAllOrdersForMonth(Convert.ToInt32(data["year"].ToString()), Convert.ToInt32(data["month"].ToString())));
+        }
         // [Authorize] // Get a list of singular orders.
         [HttpGet("{id}")]
         public ActionResult<Order> Get(int id)
@@ -57,6 +63,7 @@ namespace WeddingApp.Controllers
         {
             try
             {
+                order.Type = OrderApprovalType.Pending;
                 return Ok(_orderService.CreateOrder(order));
             }
             catch (Exception e)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {}
+    "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
+    "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
         "projectName": "WeddingApp.Core",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
+        "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj",
         "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\obj\\",
+        "outputPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
+    "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
         "projectName": "WeddingApp.Entity",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
+        "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj",
         "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\obj\\",
+        "outputPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
+    "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
+        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
         "projectName": "WeddingApp.Infrastructure.SQLData",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
+        "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj",
         "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\obj\\",
+        "outputPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -154,11 +154,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
               }
             }
           }
@@ -197,14 +197,14 @@
         }
       }
     },
-    "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {
+    "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
+        "projectUniqueName": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
         "projectName": "WeddingApp",
-        "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
+        "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp\\WeddingApp.csproj",
         "packagesPath": "C:\\Users\\nedas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp\\obj\\",
+        "outputPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -223,14 +223,14 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Core\\WeddingApp.Core.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Entity\\WeddingApp.Entity.csproj"
               },
-              "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
-                "projectPath": "C:\\Users\\nedas\\Desktop\\WeddingApp\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj"
+              "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj": {
+                "projectPath": "C:\\Users\\nedas\\Desktop\\Ok\\ASd\\BackEnd\\WeddingApp\\WeddingApp.Infrastructure.SQLData\\WeddingApp.Infrastructure.SQLData.csproj"
               }
             }
           }

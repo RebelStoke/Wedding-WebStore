@@ -1,37 +1,51 @@
+<app-header></app-header>
 <div class="mainComponent">
-  <div class="formWrapper">
-  <form class="form">
-    <div class="form-group">
-      <label for="inputName">Name</label>
-      <input type="text" class="form-control" id="inputName" >
+  <div class="container">
+    <div class="description">
+      <h1>Make your reservation</h1>
     </div>
-    <div class="form-group">
-      <label for="inputLocation">Location</label>
-      <input type="text" class="form-control" id="inputLocation">
-    </div>
-    <div class="form-group">
-      <label for="inputPhoneNumber">Phone number</label>
-      <input type="tel" class="form-control" id="inputPhoneNumber">
-    </div>
-    <div class="form-group">
-      <label for="inputLocation">Email</label>
-      <input type="email" class="form-control" id="inputEmail">
-    </div>
-  </form>
+    <form class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputFirstName">First Name</label>
+          <input #inputFirstName class="form-control" id="inputFirstName" placeholder="First Name" type="text">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputLastName">Last Name</label>
+          <input #inputLastName class="form-control" id="inputLastName" placeholder="Last Name" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputLocation">Location</label>
+        <input #inputLocation class="form-control" id="inputLocation" placeholder="Location" type="text">
+      </div>
+      <div class="form-group">
+        <label for="inputPhoneNumber">Phone</label>
+        <input #inputPhone class="form-control" id="inputPhoneNumber" placeholder="Phone Number" type="tel">
+      </div>
+      <div class="form-group">
+        <label for="inputLocation">Email</label>
+        <input #inputEmail class="form-control" id="inputEmail" placeholder="Email Address" type="email">
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input #d="ngbDatepicker" outsideDays="hidden" (click)="d.toggle()" (navigate)="changeMonth($event.next)" [(ngModel)]="model"
+                 [dayTemplate]="customDay" class="form-control" name="dp" ngbDatepicker placeholder="yyyy-mm-dd">
+        </div>
+      </div>
+    </form>
+    <ng-template #customDay  let-date
+                 let-selected="selected">
+      <div [class.focused]="selected"
+           [class.reservedDay]="isDayReserved(date)" [class.unavailableDay]="isDayUnavailable(date)" class="custom-day">
+        {{ date.day }}
+      </div>
+    </ng-template>
+    <button
+      (click)="createOrder(inputFirstName.value+inputLastName.value, inputEmail.value, inputLocation.value, inputPhone.value)"
+      class="btn" type="submit">Submit
+    </button>
   </div>
-  <div class="calendarWrapper">
-  <p>Simple datepicker</p>
-  <div class="calendar">
-    <ngb-datepicker #dp [(ngModel)]="model" (select)="onDateSelect($event)"></ngb-datepicker>
-  </div>
-  <div>
-  <hr/>
-  <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
-  <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
-  <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
-  <hr/>
-  </div>
-    <pre>Date: {{date1.day}}.{{date1.month}}.{{date1.year}}</pre>
-    <button type="submit" class="btn btn-primary">Submit</button>
 </div>
-</div>
+<app-footer></app-footer>
