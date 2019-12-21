@@ -10,13 +10,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    window.onscroll = () => {
-      if (window.scrollY > 35) {
-          console.log(window.scrollY);
-          document.getElementById('navbar').style.backgroundColor = '#faf7f2';
-        } else {
-        document.getElementById('navbar').style.backgroundColor = 'transparent';
-      }
-    };
+
   }
 }
