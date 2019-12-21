@@ -8,6 +8,7 @@
       <div class="card border-0 rounded-0">
         <div class="card-title mb-1 p-3">
           <h5>Order Table</h5>
+          <button class="btn btn-primary"  (click)="modalOrderView(createModal)">Add Order</button>
         </div>
         <div class="card-body">
           <div class="table-responsive-md">
@@ -24,18 +25,18 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let order of orders$ | async" (click)="modalOrderView(viewOrder,order)">
-                <th scope="row">{{ order.id }}</th>
-                <td>{{order.customer.name}}</td>
-                <td>{{ order.dateWhenOrderWasMade }}</td>
-                <td>{{ order.dateForOrderToBeCompleted.takenDate }}</td>
-                <td>{{ order.location }}</td>
-                <td>
+              <tr *ngFor="let order of orders$ | async" >
+                <th (click)="modalOrderView(viewOrder,order)" scope="row">{{ order.id }}</th>
+                <td (click)="modalOrderView(viewOrder,order)">{{order.customer.name}}</td>
+                <td (click)="modalOrderView(viewOrder,order)">{{ order.dateWhenOrderWasMade }}</td>
+                <td (click)="modalOrderView(viewOrder,order)">{{ order.dateForOrderToBeCompleted.takenDate }}</td>
+                <td (click)="modalOrderView(viewOrder,order)">{{ order.location }}</td>
+                <td (click)="modalOrderView(viewOrder,order)">
                   <span class="badge badge-primary rounded-0 p-1">{{ order.type }}</span>
                 </td>
                 <td>
                   <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
-                    <i class="far fa-edit"  (click)="editElement(order)"></i>
+                    <i class="far fa-edit"  (click)="modalOrderView(editModal,order,true)"></i>
                   </a>
                   <a class="btn btn-sm btn-outline-lightning rounded-0">
                     <i class="far fa-trash-alt" (click)="deleteOrder(order.id)"></i>
@@ -64,6 +65,48 @@
   </div>
 </div>
 
+
+<ng-template #createModal let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="insertForm" (ngSubmit)="createInfo()">
+      <div class="form-group">
+        <label class="white-text" >Date When Order was made</label>
+        <input type="text" class="form-control" placeholder="Date Order Was Made" formControlName="OrderM" required/>
+      </div>
+      <div class="form-group">
+        Date When Order needs to be finished"
+        <input type="text" class="form-control" placeholder="Date When Order needs to be finished" formControlName="OrderC" required>
+      </div>
+      <div class="form-group">
+        Location of Wedding
+        <input type="text" class="form-control" placeholder="Location" formControlName="OrderL"  required>
+      </div>
+      <div class="input-group form-group">
+        Type
+        <input type="text" class="form-control" placeholder="Type" formControlName="OrderT"   required>
+      </div>
+      <div class="input-group form-group">
+        Customer name
+        <input type="text" class="form-control" placeholder="Customer Name" formControlName="CustN"  required>
+      </div>
+      <div class="input-group form-group">
+        Customer email
+        <input type="text" class="form-control" placeholder="Customer Email" formControlName="CustE"  required>
+      </div>
+      <div class="input-group form-group">
+        Customer phone
+        <input type="text" class="form-control" placeholder="Customer Phone" formControlName="CustP" >
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+</ng-template>
+
 <ng-template #viewOrder let-modal>
   <div class="modal-header">
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -86,21 +129,6 @@
   </div>
 </ng-template>
 
-<ng-template #createModal let-modal>
-  <div class="modal-header">
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
-</ng-template>
-
 
 <ng-template #editModal let-modal>
   <div class="modal-header">
@@ -109,10 +137,36 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
+    <form [formGroup]="insertForm" (ngSubmit)="editInfo()">
+      <div class="form-group">
+        <label class="white-text" >Date When Order was made</label>
+        <input type="text" class="form-control"  placeholder="Date Order Was Made" formControlName="OrderM" value="{{modalContent.dateWhenOrderWasMade}}" required/>
+      </div>
+      <div class="form-group">
+        Date When Order needs to be finished"
+        <input type="text" class="form-control" placeholder="Date When Order needs to be finished" formControlName="OrderC" value="{{modalContent.dateForOrderToBeCompleted.takenDate}}" required>
+      </div>
+      <div class="form-group">
+        Location of Wedding
+        <input type="text" class="form-control" placeholder="Location" formControlName="OrderL" value="{{ modalContent.location}}"  required>
+      </div>
+      <div class="input-group form-group">
+        Type
+        <input type="text" class="form-control" placeholder="Type" formControlName="OrderT" value="{{ modalContent.type}}"  required>
+      </div>
+      <div class="input-group form-group">
+        Customer name
+        <input type="text" class="form-control" placeholder="Customer Name" formControlName="CustN" value="{{modalContent.customer.name}}"  required>
+      </div>
+      <div class="input-group form-group">
+        Customer email
+        <input type="text" class="form-control" placeholder="Customer Email" formControlName="CustE" value="{{modalContent.customer.email}}"  required>
+      </div>
+      <div class="input-group form-group">
+        Customer phone
+        <input type="text" class="form-control" placeholder="Customer Phone" formControlName="CustP" value="{{modalContent.customer.phone}}" >
+      </div>
+      <input type="submit" class="btn btn-primary">
     </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
   </div>
 </ng-template>

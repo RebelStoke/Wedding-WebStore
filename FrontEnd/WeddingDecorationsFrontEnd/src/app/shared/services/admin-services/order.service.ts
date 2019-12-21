@@ -53,12 +53,8 @@ export class OrderService {
   constructor(private http: HttpClient) {
 
     //Initial call for to get current orders
-    this.getAllOrders(this.page,this.pageSize).subscribe((allorders) => {
-//assign initial data
-      this.allorderss = allorders.orders;
-      this.totalOrders = allorders.totalCount;
-      this._search$.next();
-    });
+    this.getAllOrders(this.page,this.pageSize).subscribe();
+
 
     //Used to make search a constant call. So later updates are instantly called.
     this._search$.pipe(
@@ -90,11 +86,7 @@ export class OrderService {
   //On set execute line of code
   private _set(patch: Partial<State>) {
     Object.assign(this._state, patch);
-    this.getAllOrders(this._state.page,this._state.pageSize).subscribe((allorders) => {
-      this.allorderss = allorders.orders;
-      this.totalOrders = allorders.totalCount;
-      this._search$.next();
-    });
+    this.getAllOrders(this._state.page,this._state.pageSize).subscribe();
   }
 
 
@@ -102,7 +94,12 @@ export class OrderService {
     const params = new HttpParams()
       .set('currentPage', page.toString())
       .set('itemsPerPage', pageSize.toString());
-    return this.http.get<any>(environment.apiUrl+"/Order", {params: params});
+    return this.http.get<any>(environment.apiUrl+"/Order", {params: params}).pipe(map(response => {
+      this.allorderss = response.orders;
+      this.totalOrders = response.totalCount;
+      this._search$.next();
+      })
+    );
   }
 
   private _search(): Observable<SearchResult> {
@@ -116,19 +113,11 @@ export class OrderService {
 
   deleteOrder(orderID: number): Observable<boolean>  {
     const url = `${environment.apiUrl}/Order/${orderID}`;
-    console.log(url);
     return this.http.delete<any>(url)
       .pipe(map(response => {
-
-        console.log(response);
         // login successful if there's a jwt token in the response
         if (response) {
-          this.getAllOrders(this.page,this.pageSize).subscribe((allorders) => {
-//assign initial data
-            this.allorderss = allorders.orders;
-            this.totalOrders = allorders.totalCount;
-            this._search$.next();
-          });
+          this.getAllOrders(this.page,this.pageSize).subscribe();
           return true;
         } else {
           // return false to indicate failed login

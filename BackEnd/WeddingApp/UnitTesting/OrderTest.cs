@@ -186,7 +186,7 @@ namespace UnitTesting
             IOrderService orderService = new OrderService(orderRepository.Object);
 
 
-            Assert.Throws<ArgumentException>((Action)(() => orderService.CreateOrder(ord1)));
+            Assert.Throws<ArgumentOutOfRangeException>((Action)(() => orderService.CreateOrder(ord1)));
         }
 
         [Fact]
